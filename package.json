@@ -1,0 +1,23 @@
+{
+  "name": "equi2cube",
+  "version": "1.0.0",
+  "description": "Converts equirectangular images to 6 sided cube maps (JavaScript)",
+  "main": "equi2cube.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinaaglave/equi2cube.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachinaaglave/equi2cube/issues"
+  },
+  "homepage": "https://github.com/sachinaaglave/equi2cube#readme",
+  "dependencies": {
+    "canvas": "^2.9.3"
+  }
+}

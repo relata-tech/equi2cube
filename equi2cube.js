@@ -1,3 +1,5 @@
+const { createCanvas } = require("canvas");
+
 var equi2cube = (function () {
   "use strict";
 
@@ -161,9 +163,12 @@ var equi2cube = (function () {
     var canvas = image,
       ctx = null;
     if (canvas.tagName !== "CANVAS") {
-      canvas = document.createElement("canvas");
-      canvas.width = image.naturalWidth || image.width;
-      canvas.height = image.naturalHeight || image.height;
+      // canvas = document.createElement("canvas");
+      // canvas.width = image.naturalWidth || image.width;
+      // canvas.height = image.naturalHeight || image.height;
+      const imgWidth = image.naturalWidth || image.width;
+      const imgHeight = image.naturalHeight || image.height;
+      canvas = createCanvas(imgWidth, imgHeight);
       ctx = canvas.getContext("2d");
       ctx.translate(canvas.width, 0);
       ctx.scale(-1, 1);
@@ -197,11 +202,16 @@ var equi2cube = (function () {
       throw new Error("faceSize needed to be a number or missing");
     }
 
+    var faceName = ["back", "front", "top", "bottom", "left", "right"];
     var faces = [];
     for (var i = 0; i < 6; ++i) {
-      var c = document.createElement("canvas");
-      c.width = faceSize;
-      c.height = faceSize;
+      // var c = document.createElement("canvas");
+      // c.width = faceSize;
+      // c.height = faceSize;
+      const imgWidth = faceSize;
+      const imgHeight = faceSize;
+      const c = createCanvas(imgWidth, imgHeight);
+      c.tagName = faceName[i];
       faces.push(c);
     }
 
